@@ -1,0 +1,16 @@
+.Footer--lower {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+.Footer--upper {
+  color: gray;
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  background-color: #f4f4f4;
+  padding: 1vw 0 1vw 0;
+}

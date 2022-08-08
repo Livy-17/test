@@ -1,0 +1,37 @@
+.MUJI--logo {
+  font-size: 40px;
+}
+
+.Navbar--upper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding: 0 10vw 0 10vw;
+  /* border: solid 2px red; */
+}
+
+.icons--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: lightgray;
+}
+
+.Navbar--lower {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4.6vw;
+}
+
+.Navbar--lower p {
+  color: gray;
+  font-size: 20px;
+}
