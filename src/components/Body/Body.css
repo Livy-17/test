@@ -67,6 +67,7 @@
   border: none;
   border-radius: 5px;
   margin: 50px 0 30px 0;
+  cursor: pointer;
 }
 
 .error--info {

@@ -4,8 +4,8 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
 
-const Body = () => {
-
+const Body = ({ setRedirect }) => {
+  
   const formSchema = Yup.object().shape(
     {
       firstname: Yup.string()
@@ -32,15 +32,31 @@ const Body = () => {
 
   const { errors } = formState;
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = async (data) => {
+    const FD = new FormData();
+    FD.append("firstname", data.firstname);
+    FD.append("lastname", data.lastname);
+    FD.append("email", data.email);
+    FD.append("password", data.password);
+    FD.append("confirmPwd", data.confirmPwd);
+    // const res = await fetch("HERE IS THE URL", {
+    //   method: "POST",
+    //   body: FD
+    // }).then((res) => res.json()); 
+    // alert(JSON.stringify(`${res.message}, status: ${res.status}`));
+    
+    jump();
+  };
+
+  const jump = () => {
+    setRedirect(true);
   };
 
   return (
     <div className='Body--container'>
       <div className='signup--container'>
         <h2>Sign Up Your Account</h2>
-        <form onSubmit={handleSubmit(onSubmit)} className='form--container'>
+        <form onSubmit={handleSubmit(onSubmit)} className='form--container' id='myForm'>
           <div className='input--container'>
             <label htmlFor='FirstName' className='labels'>First Name:</label>
             <input className={errors.firstname ? 'inputFrame--red' : 'inputFrame'} id='FirstName' type='text' name='firstname' {...register("firstname")} />
